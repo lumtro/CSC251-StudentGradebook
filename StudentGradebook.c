@@ -54,33 +54,34 @@ int main(int argc, char const *argv[]){
 }
 
 int addStudent(sqlite3 * db){
-    char *err_msg = 0;
+    char *err_msg = NULL;
     char firstName[30], lastName[30], sql_qry[256];
-    int inputID;
+    char inputID[20];
+    int digit;
 
     //Should take max of 30 characters
     fprintf(stderr, "Enter student first name (Max 30 Char): ");
-    scanf("%30s", &firstName);
+    scanf("%29s", firstName);
     fprintf(stderr, "Enter student last name (Max 30 Char): ");
-    scanf("%30s", &lastName);
+    scanf("%29s", lastName);
 
     //checks id is 9 digits, problem when ID starts with 0 (000001234)
      //Optimized for rejecting numbers less than 9 digits and allows leading 0's (Moises)
     while (1) //while true
     {
         digit = 0; //Digit count
-        while(id[digit] != "\0")
+        while(inputID[digit] != "\0")
         {
             digit++;
         }
-        if(digit == 9 && strspn(id, "0123456789") == 9)
+        if(digit == 9 && strspn(inputID, "0123456789") == 9)
         {
             break;
         }
         else
         {
             printf("Please enter a valid 9-digit ID: ");
-            scanf("%19s", id);
+            scanf("%19s", inputID);
         }
     }
     
