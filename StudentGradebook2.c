@@ -1,4 +1,4 @@
-//VERSION WITHOUT SQL database 
+//VERSION WITHOUT SQL database, storing data with txt file
 #include<stdio.h>
 #include<stdbool.h>
 
