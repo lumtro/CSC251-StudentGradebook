@@ -92,8 +92,9 @@ int addStudent(sqlite3 * db){
     } while (inputID < 100000000 || inputID > 999999999);*/
     
     //snprintf for strings
+    int numericID = atoi(inputID);
     snprintf(sql_qry, sizeof(sql_qry), "INSERT INTO students (studentID, firstName,lastName) VALUES"
-                "(%d, '%s', '%s');", inputID, firstName, lastName);
+                "(%d, '%s', '%s');", numericID, firstName, lastName);
     
 
     int conn = sqlite3_exec(db, sql_qry, 0, 0, &err_msg);
