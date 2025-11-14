@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdio.h>
 #include"sqlite/sqlite3.c"
 #include<stdbool.h>
 
@@ -70,7 +71,7 @@ int addStudent(sqlite3 * db){
     while (1) //while true
     {
         digit = 0; //Digit count
-        while(inputID[digit] != "\0")
+        while(inputID[digit] != '\0')
         {
             digit++;
         }
