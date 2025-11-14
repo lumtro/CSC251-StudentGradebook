@@ -65,10 +65,28 @@ int addStudent(sqlite3 * db){
     scanf("%30s", &lastName);
 
     //checks id is 9 digits, problem when ID starts with 0 (000001234)
-    do{
+     //Optimized for rejecting numbers less than 9 digits and allows leading 0's (Moises)
+    while (1) //while true
+    {
+        digit = 0; //Digit count
+        while(id[digit] != "\0")
+        {
+            digit++;
+        }
+        if(digit == 9 && strspn(id, "0123456789") == 9)
+        {
+            break;
+        }
+        else
+        {
+            printf("Please enter a valid 9-digit ID: ");
+            scanf("%19s", id);
+        }
+    
+        /*do{
     fprintf(stderr, "Enter studentID (9 digits): ");
     scanf("%d", &inputID);
-    } while (inputID < 100000000 || inputID > 999999999);
+    } while (inputID < 100000000 || inputID > 999999999);*/
     
     //snprintf for strings
     snprintf(sql_qry, sizeof(sql_qry), "INSERT INTO students (studentID, firstName,lastName) VALUES"
