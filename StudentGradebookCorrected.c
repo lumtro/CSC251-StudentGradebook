@@ -48,7 +48,6 @@ int main(int argc, char const *argv[]){
     }
     //FUNCTIONS START HERE
     //probably have interactive switch here to select functions
-    //Modifications made by Moises
     int option; //For switch
     do
     {
