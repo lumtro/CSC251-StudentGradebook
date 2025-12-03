@@ -45,3 +45,10 @@ Allen Tran
 -Set up loops so when initially creating a student, grades are correctly read (no negative grades
 and is a valid float value)
 -Checked most functions to ensure inputs are correctly parsed
+Henry Le
+- Expanded database to include 5 grade fields per student
+- Updated addStudent to collect grades 
+- Added listStudents function to display all student records 
+- Added findStudent function to search by student ID
+- Added updateStudent function to modify individual grades
+- Added showStatistics function for count, average, high/low
